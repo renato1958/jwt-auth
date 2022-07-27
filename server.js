@@ -16,7 +16,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 
-app.listen(port, '0.0.0.0', () => {
+if(process.env.NODE_ENV !== 'production') {
+    app.listen(port, '0.0.0.0', () => {
     console.log(`Server in ascolto sulla porta ${port};
 Ctrl-C per uscire`);
-});
+    })
+} else {
+    app.listen(port, () => {
+        console.log(`Server in ascolto sulla porta ${port};
+    Ctrl-C per uscire`);
+        })    
+}
