@@ -1,7 +1,7 @@
 {
   "name": "jwt-auth",
   "version": "1.0.0",
-  "description": "",
+  "description": "Liberamente tratto da https://stackabuse.com/authentication-and-authorization-with-jwts-in-express-js",
   "engines": {
     "node": "16.14.2",
     "npm": "8.6.0"
@@ -20,7 +20,8 @@
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.7",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
