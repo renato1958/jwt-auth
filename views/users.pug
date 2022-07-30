@@ -7,6 +7,12 @@ html(lang="en")
         title= title
         link(rel = "stylesheet", href="/css/styles.css")
     body
-        .users
-            each user in users
-                h3 #{user.last} #{user.first}
+        if users.length
+            .users
+                each user in users
+                    h3 #{user.last} #{user.first} (username: #{user.username}), ruolo: #{user.role}
+
+        else 
+            h3 Nessun utente registrato
+        |
+        script(src="/js/main.js", type="module")

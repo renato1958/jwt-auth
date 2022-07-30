@@ -4,8 +4,9 @@ const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 
 router.post('/signup', async (req, res) => {
+    const { username, first, last, role, email, password } = req.body;
+
     try {
-        const { username, first, last, email, password } = req.body;
         if(
             !username ||
             !first ||
@@ -27,6 +28,7 @@ router.post('/signup', async (req, res) => {
             username,
             first,
             last,
+            role,
             email: email.toLowerCase(),
             password: encryptedPassword,
         });

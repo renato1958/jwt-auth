@@ -1,7 +1,7 @@
 {
   "name": "jwt-auth",
   "version": "1.0.0",
-  "description": "Liberamente tratto da https://stackabuse.com/authentication-and-authorization-with-jwts-in-express-js",
+  "description": "Liberamente tratto da https://www.section.io/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/",
   "engines": {
     "node": "16.14.2",
     "npm": "8.6.0"
