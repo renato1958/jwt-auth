@@ -1,0 +1,8 @@
+<h1>Qui appariranno gli utenti registrati</h1>
+
+<script type="module">
+    window.addEventListener('DOMContentLoaded', function(e) {
+        fetch('/api/users')
+        .then((response) => response.json())
+    })
+</script>
