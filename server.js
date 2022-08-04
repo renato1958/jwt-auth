@@ -5,22 +5,22 @@ const port = process.env.PORT || 3000;
 const morgan = require('morgan');
 const dbConnect = require('./database/mongoConnection');
 dbConnect();
+const { engine } = require('express-handlebars');
 const path = require('path');
-const authRoutes = require('./routes/api/auth');
-const usersRoutes = require('./routes/api/users');
 
 const app = express();
 
-app.set('view engine', 'pug');
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/auth', authRoutes);
-app.use('/api/users', usersRoutes);
 app.use(express.static('public'));
+
+app.get('/', (req, res) => res.render('users', {title: 'Cujun!'}));
 
 if(process.env.NODE_ENV !== 'production') {
     app.listen(port, '0.0.0.0', () => {
