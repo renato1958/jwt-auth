@@ -23,7 +23,6 @@ app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
     const resp = await User.find();
-    console.log(resp);
     res.render('users', {resp});
 });
 
