@@ -7,6 +7,7 @@ const dbConnect = require('./database/mongoConnection');
 dbConnect();
 const { engine } = require('express-handlebars');
 const path = require('path');
+const User = require('./models/User');
 
 const app = express();
 
@@ -20,7 +21,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.get('/', (req, res) => res.render('users', {title: 'Cujun!'}));
+app.get('/', async (req, res) => {
+    const resp = await User.find();
+    console.log(resp);
+    res.render('users', {resp});
+});
+
+app.use('*', (req, res) => {
+    res.status(404).render('404');
+});
+
+app.use((err, req, res, next) => {
+    console.log(err.message);
+    res.status(500).render('500');
+});
 
 if(process.env.NODE_ENV !== 'production') {
     app.listen(port, '0.0.0.0', () => {
