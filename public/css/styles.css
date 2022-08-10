@@ -1,0 +1,53 @@
+:root {
+    color-scheme: light dark;
+    height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, div {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+}
+
+.logo, .side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    padding: 0 0.8rem;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: max-content;
+    align-content: center;
+}
+
+.user-property {
+    font-size: 1.2rem;
+    font-style: normal;
+}
+
+.user-attribute {
+    font-size: 1.4 rem;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.user {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}

@@ -22,17 +22,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
-    const resp = await User.find();
-    res.render('users', {resp});
+    try {
+    const users = await User.find().lean();
+    //console.log(resp);
+    res.status(200).render('users', {users: users});
+    }
+    catch(err) {}
 });
 
 app.use('*', (req, res) => {
-    res.status(404).render('404');
+    res.status(404).render('404', {layout: 'error-messages', title: '404 - Not Found'});
 });
 
 app.use((err, req, res, next) => {
     console.log(err.message);
-    res.status(500).render('500');
+    res.status(500).render('500', {layout: 'error-messages', title: '500 - Internal Server Error'});
 });
 
 if(process.env.NODE_ENV !== 'production') {

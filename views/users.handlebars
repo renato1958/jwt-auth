@@ -1,14 +1,17 @@
-<h1>Utenti registrati</h1>
-
-{{#each resp}}
-<div class="user">
-{{#each this}}
-    <p>{{last}} {{first}}</p>
-    <p>{{username}}</p>
-    <p>{{email}}</p>
-    <p>{{role}}</p>
-{{/each}}
+<div class="logo">
+    <h1>Utenti registrati</h1>
 </div>
-{{/each}}
+<div class="main-content">
+    {{#each users}}
+    <div class="user">
+        <p class="user-property"><span class="user-attribute">Nome:</span> {{first}} {{last}}</p>
+        <p class="user-property"><span class="user-attribute">Username:</span> {{username}}</p>
+        <p class="user-property"><span class="user-attribute">Email:</span> {{email}}</p>
+        <p class="user-property"><span class="user-attribute">Ruolo:</span> {{role}}</p>
+    </div>
+    {{/each}}
+</div>
 
-<p class="go-to-page">Prova questa <a href="/inexistent-page">pagina inesistente</a>.</p>
+<div class="side-content">
+    <p class="go-to-page">Prova questa <a href="/inexistent-page">pagina inesistente</a>.</p>
+</div>
