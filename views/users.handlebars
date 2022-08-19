@@ -1,16 +1,16 @@
 <div class="logo">
     <h1>Utenti registrati</h1>
 </div>
-<div class="main-content">
+<!--div class="main-content"-->
     {{#each users}}
-    <div class="user">
+    <div class="col">
         <p class="user-property"><span class="user-attribute">Nome:</span> {{first}} {{last}}</p>
         <p class="user-property"><span class="user-attribute">Username:</span> {{username}}</p>
         <p class="user-property"><span class="user-attribute">Email:</span> {{email}}</p>
         <p class="user-property"><span class="user-attribute">Ruolo:</span> {{role}}</p>
     </div>
     {{/each}}
-</div>
+<!--/div-->
 
 <div class="side-content">
     <p class="go-to-page">Prova questa <a href="/inexistent-page">pagina inesistente</a>.</p>
