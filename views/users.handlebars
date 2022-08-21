@@ -1,17 +1,24 @@
-<div class="logo">
-    <h1>Utenti registrati</h1>
+<div class="row">
+    <div class="col logo text-center">
+        <h1 class="bg-dark text-light py-3">Utenti registrati</h1>
+    </div>
 </div>
 <!--div class="main-content"-->
-    {{#each users}}
-    <div class="col">
-        <p class="user-property"><span class="user-attribute">Nome:</span> {{first}} {{last}}</p>
-        <p class="user-property"><span class="user-attribute">Username:</span> {{username}}</p>
-        <p class="user-property"><span class="user-attribute">Email:</span> {{email}}</p>
-        <p class="user-property"><span class="user-attribute">Ruolo:</span> {{role}}</p>
-    </div>
-    {{/each}}
+<div class="row g-00g-1">
+{{#each users}}
+<div class="col-md-6 col-lg-4">
+    <div class="bg-secondary text-white">    
+        <p><span>Nome:</span> {{first}} {{last}}</p>
+        <p><span>Username:</span> {{username}}</p>
+        <p><span>Email:</span> {{email}}</p>
+        <p><span>Ruolo:</span> {{role}}</p>
+    </div>    
+</div>
+{{/each}}
+</div>
 <!--/div-->
-
-<div class="side-content">
+<div class="row">
+<div class="col side-content">
     <p class="go-to-page">Prova questa <a href="/inexistent-page">pagina inesistente</a>.</p>
+</div>
 </div>
